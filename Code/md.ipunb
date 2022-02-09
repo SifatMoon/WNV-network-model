@@ -1,0 +1,12 @@
+# Metrics
+
+- **prob-at-d:** (probability of detection at day d)For a outbreak scenario, we generate $N$ replicate of the disease propagation from EpiHiper. Then for each replicate, we sample $N_r$ times for each day for a specific sampling strategy. If the strategy can detect the new variant (variant-2) $n_r$ times at day $d$. Then, \textit{prob-for-d} for a replicate r is, $p_d = \frac{n_r}{N_r}$.
+- **prob-by-d:** cumulative probability by day d
+- **T95:**
+- **P95:**
+- **Vulnerability:** We will calculate vulnerability at day: (emergence day +30, emergence day+60, emergence day+90), as early days are important to evaluate a sampling strategy. 
+For R replicates of EpiHiper, vulnerability of a node i by day d is; $i_v= \frac{\sum_{r=1}^{r=R}I_r}{N}$
+here, I_r is a boolean vector, $I_r[i]=1$ if node i is infected by day d in replicate r otherwise zeor.
+
+Reinfected vulnerability of a node i by day d is similer just $I_r[i]=1$ if node i is infected more than once by day d in replicate r.
+
